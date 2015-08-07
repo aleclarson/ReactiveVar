@@ -1,0 +1,8 @@
+{
+  "name": "reactive-var",
+  "description": "Reactive variable",
+  "version": "1.0.6",
+  "dependencies": {
+    "tracker": "aleclarson/tracker#1.0.8"
+  }
+}

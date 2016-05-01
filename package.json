@@ -1,0 +1,9 @@
+{
+  "name": "reactive-var",
+  "description": "Reactive variable",
+  "version": "1.0.6",
+  "dependencies": {
+    "lotus-require": "aleclarson/lotus-require#1.0.0",
+    "tracker": "aleclarson/tracker#1.0.8"
+  }
+}

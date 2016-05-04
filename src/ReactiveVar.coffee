@@ -4,13 +4,15 @@
 Tracker = require "tracker"
 Type = require "Type"
 
-# TODO: Inject self into 'Property' class.
-
 type = Type "ReactiveVar"
+
+type.didBuild (type) ->
+  Property = require "Property"
+  Property.inject.ReactiveVar type
 
 type.argumentTypes =
   value: Any
-  compare: Function.Maybe
+  compare: Function
 
 type.argumentDefaults =
   compare: (oldValue, newValue) ->
@@ -22,7 +24,7 @@ type.defineValues
 
   _value: (value) -> value
 
-  _compare: (_, compare) -> compare
+  _compare: (value, compare) -> compare
 
 type.defineMethods
 
@@ -41,4 +43,4 @@ type.defineMethods
     count += 1 for id in Object.keys @_dep._dependentsById
     return count
 
-module.exports = ReactiveVar = type.build()
+module.exports = type.build()

@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "main": "js/src/ReactiveVar",
   "dependencies": {
-    "lotus-require": "aleclarson/lotus-require#1.0.0",
-    "tracker": "aleclarson/tracker#2.0.0"
+    "Type": "aleclarson/Type#1.0.0",
+    "tracker": "aleclarson/tracker#2.0.0",
+    "type-utils": "aleclarson/type-utils#1.0.0"
   },
   "lotus": {
     "plugins": [

@@ -1,10 +1,10 @@
 var Any, Tracker, Type, type;
 
-Any = require("type-utils").Any;
-
 Tracker = require("tracker");
 
 Type = require("Type");
+
+Any = require("Any");
 
 type = Type("ReactiveVar");
 

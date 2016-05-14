@@ -3,9 +3,10 @@
   "version": "2.0.0",
   "main": "js/src/ReactiveVar",
   "dependencies": {
+    "Any": "aleclarson/Any#1.0.0",
+    "Property": "aleclarson/Property#1.0.0",
     "Type": "aleclarson/Type#1.0.0",
-    "tracker": "aleclarson/tracker#2.0.0",
-    "type-utils": "aleclarson/type-utils#1.0.0"
+    "tracker": "aleclarson/tracker#2.0.0"
   },
   "lotus": {
     "plugins": [

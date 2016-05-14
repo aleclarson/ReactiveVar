@@ -1,8 +1,7 @@
 
-{ Any } = require "type-utils"
-
 Tracker = require "tracker"
 Type = require "Type"
+Any = require "Any"
 
 type = Type "ReactiveVar"
 

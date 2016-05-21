@@ -8,12 +8,6 @@ Any = require("Any");
 
 type = Type("ReactiveVar");
 
-type.didBuild(function(type) {
-  var Property;
-  Property = require("Property");
-  return Property.inject.ReactiveVar(type);
-});
-
 type.argumentTypes = {
   value: Any,
   compare: Function
@@ -61,6 +55,12 @@ type.defineMethods({
     }
     return count;
   }
+});
+
+type.didBuild(function(type) {
+  var inject;
+  inject = require("Property/inject");
+  return inject("ReactiveVar", type);
 });
 
 module.exports = type.build();

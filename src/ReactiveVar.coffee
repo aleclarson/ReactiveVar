@@ -5,10 +5,6 @@ Any = require "Any"
 
 type = Type "ReactiveVar"
 
-type.didBuild (type) ->
-  Property = require "Property"
-  Property.inject.ReactiveVar type
-
 type.argumentTypes =
   value: Any
   compare: Function
@@ -41,5 +37,9 @@ type.defineMethods
     count = 0
     count += 1 for id in Object.keys @_dep._dependentsById
     return count
+
+type.didBuild (type) ->
+  inject = require "Property/inject"
+  inject "ReactiveVar", type
 
 module.exports = type.build()

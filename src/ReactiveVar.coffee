@@ -38,8 +38,4 @@ type.defineMethods
     count += 1 for id in Object.keys @_dep._dependentsById
     return count
 
-type.didBuild (type) ->
-  inject = require "Property/inject"
-  inject "ReactiveVar", type
-
 module.exports = type.build()

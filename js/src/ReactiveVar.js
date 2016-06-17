@@ -57,12 +57,6 @@ type.defineMethods({
   }
 });
 
-type.didBuild(function(type) {
-  var inject;
-  inject = require("Property/inject");
-  return inject("ReactiveVar", type);
-});
-
 module.exports = type.build();
 
 //# sourceMappingURL=../../map/src/ReactiveVar.map

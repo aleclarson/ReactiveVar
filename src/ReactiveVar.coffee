@@ -1,4 +1,5 @@
 
+fromArgs = require "fromArgs"
 Tracker = require "tracker"
 Type = require "Type"
 Any = require "Any"
@@ -17,9 +18,9 @@ type.defineValues
 
   _dep: -> Tracker.Dependency()
 
-  _value: (value) -> value
+  _value: fromArgs 0
 
-  _compare: (value, compare) -> compare
+  _compare: fromArgs 1
 
 type.defineMethods
 

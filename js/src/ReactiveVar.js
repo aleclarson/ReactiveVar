@@ -1,4 +1,6 @@
-var Any, Tracker, Type, type;
+var Any, Tracker, Type, fromArgs, type;
+
+fromArgs = require("fromArgs");
 
 Tracker = require("tracker");
 
@@ -23,12 +25,8 @@ type.defineValues({
   _dep: function() {
     return Tracker.Dependency();
   },
-  _value: function(value) {
-    return value;
-  },
-  _compare: function(value, compare) {
-    return compare;
-  }
+  _value: fromArgs(0),
+  _compare: fromArgs(1)
 });
 
 type.defineMethods({
@@ -59,4 +57,4 @@ type.defineMethods({
 
 module.exports = type.build();
 
-//# sourceMappingURL=../../map/src/ReactiveVar.map
+//# sourceMappingURL=map/ReactiveVar.map

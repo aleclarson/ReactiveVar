@@ -5,6 +5,7 @@
   "dependencies": {
     "Any": "aleclarson/Any#1.0.0",
     "Type": "aleclarson/Type#1.0.0",
+    "fromArgs": "aleclarson/fromArgs#1.0.0",
     "tracker": "aleclarson/tracker#2.0.0"
   },
   "lotus": {

@@ -1,6 +1,4 @@
-var Any, Tracker, Type, fromArgs, type;
-
-fromArgs = require("fromArgs");
+var Any, Tracker, Type, type;
 
 Tracker = require("tracker");
 
@@ -21,12 +19,12 @@ type.argumentDefaults = {
   }
 };
 
-type.defineValues({
-  _dep: function() {
-    return Tracker.Dependency();
-  },
-  _value: fromArgs(0),
-  _compare: fromArgs(1)
+type.defineValues(function(value, compare) {
+  return {
+    _dep: Tracker.Dependency(),
+    _value: value,
+    _compare: compare
+  };
 });
 
 type.defineMethods({

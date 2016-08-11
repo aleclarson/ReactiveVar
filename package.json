@@ -6,7 +6,6 @@
     "Any": "aleclarson/Any#1.0.0",
     "Property": "aleclarson/Property#1.1.1",
     "Type": "aleclarson/Type#1.1.0",
-    "fromArgs": "aleclarson/fromArgs#1.0.0",
     "tracker": "aleclarson/tracker#2.0.0"
   },
   "lotus": {

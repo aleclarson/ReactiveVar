@@ -1,5 +1,4 @@
 
-fromArgs = require "fromArgs"
 Tracker = require "tracker"
 Type = require "Type"
 Any = require "Any"
@@ -14,13 +13,13 @@ type.argumentDefaults =
   compare: (oldValue, newValue) ->
     return oldValue is newValue
 
-type.defineValues
+type.defineValues (value, compare) ->
 
-  _dep: -> Tracker.Dependency()
+  _dep: Tracker.Dependency()
 
-  _value: fromArgs 0
+  _value: value
 
-  _compare: fromArgs 1
+  _compare: compare
 
 type.defineMethods
 

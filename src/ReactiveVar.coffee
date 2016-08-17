@@ -5,13 +5,9 @@ Any = require "Any"
 
 type = Type "ReactiveVar"
 
-type.argumentTypes =
+type.defineArgs
   value: Any
-  compare: Function
-
-type.argumentDefaults =
-  compare: (oldValue, newValue) ->
-    return oldValue is newValue
+  compare: Function.withDefault (oldValue, newValue) -> oldValue is newValue
 
 type.defineValues (value, compare) ->
 

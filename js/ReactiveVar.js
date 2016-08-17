@@ -8,16 +8,12 @@ Any = require("Any");
 
 type = Type("ReactiveVar");
 
-type.argumentTypes = {
+type.defineArgs({
   value: Any,
-  compare: Function
-};
-
-type.argumentDefaults = {
-  compare: function(oldValue, newValue) {
+  compare: Function.withDefault(function(oldValue, newValue) {
     return oldValue === newValue;
-  }
-};
+  })
+});
 
 type.defineValues(function(value, compare) {
   return {

@@ -1,8 +1,16 @@
 {
-  "name": "reactive-var",
-  "description": "Reactive variable",
-  "version": "1.0.6",
+  "name": "ReactiveVar",
+  "version": "2.0.0",
+  "main": "js/index",
   "dependencies": {
-    "tracker": "aleclarson/tracker#1.0.8"
+    "Any": "aleclarson/Any#1.0.0",
+    "Property": "aleclarson/Property#1.1.1",
+    "Type": "aleclarson/Type#1.1.0",
+    "tracker": "aleclarson/tracker#2.0.0"
+  },
+  "lotus": {
+    "plugins": [
+      "lotus-coffee"
+    ]
   }
 }

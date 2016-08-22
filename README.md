@@ -1,33 +1,25 @@
 
-# reactive-var v1.0.6 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+# ReactiveVar 2.0.0 ![stable](https://img.shields.io/badge/stability-stable-4EBA0F.svg?style=flat)
 
-This package is stripped from [meteor/reactive-var](https://atmospherejs.com/meteor/reactive-var) and made compatible with [React Native](https://github.com/facebook/react-native).
+Uses [**aleclarson/tracker**](https://github.com/aleclarson/tracker) under-the-hood for reactivity.
 
-**Note:** This package is only for client-side usage.
+```coffee
+ReactiveVar = require "reactive-var"
 
-&nbsp;
+foo = ReactiveVar 0
 
-## usage
+foo.get() # => 0
 
-```js
-var ReactiveVar = require('reactive-var');
-
-// Any value type can be used.
-var myVar = ReactiveVar(1);
-
-myVar.get() // => 1
-
-myVar.set(0) // => undefined
-
-myVar.equals(1) // => true
+foo.set   # => 2
 ```
 
-Learn more [here](http://docs.meteor.com/#/full/reactivevar_pkg).
+Each `ReactiveVar` is backed by a `Tracker.Dependency`. This makes `foo.get()` reactive.
 
-&nbsp;
+You can specify a comparison function by passing a second argument:
 
-## install
-
-```sh
-npm install aleclarson/reactive-var#1.0.6
+```coffee
+foo = ReactiveVar 0, (a, b) ->
+  # Return true if the values are equal!
 ```
+
+Otherwise, a strict `===` comparison is used by default.

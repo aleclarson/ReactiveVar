@@ -29,6 +29,12 @@ type.defineMethods
     @_dep.changed()
     return
 
+  add: (value) ->
+    @set @_value + value
+
+  sub: (value) ->
+    @_set @_value - value
+
   _numListeners: ->
     count = 0
     count += 1 for id in Object.keys @_dep._dependentsById

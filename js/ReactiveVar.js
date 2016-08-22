@@ -37,6 +37,12 @@ type.defineMethods({
     this._value = newValue;
     this._dep.changed();
   },
+  add: function(value) {
+    return this.set(this._value + value);
+  },
+  sub: function(value) {
+    return this._set(this._value - value);
+  },
   _numListeners: function() {
     var count, i, id, len, ref;
     count = 0;

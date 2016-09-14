@@ -33,7 +33,7 @@ type.defineMethods
     @set @_value + value
 
   sub: (value) ->
-    @_set @_value - value
+    @set @_value - value
 
   _numListeners: ->
     count = 0

@@ -2,15 +2,21 @@
   "name": "ReactiveVar",
   "version": "2.0.0",
   "main": "js/index",
+  "plugins": [
+    "lotus-coffee"
+  ],
+  "scripts": {
+    "build": "coffee -cb -o js src",
+    "postinstall": "postinstall-build js 'npm run build'"
+  },
   "dependencies": {
     "Any": "aleclarson/Any#1.0.0",
     "Property": "aleclarson/Property#1.1.1",
     "Type": "aleclarson/Type#1.1.0",
+    "postinstall-build": "0.2.x",
     "tracker": "aleclarson/tracker#2.0.0"
   },
-  "lotus": {
-    "plugins": [
-      "lotus-coffee"
-    ]
+  "devDependencies": {
+    "coffee-script": "1.9.x"
   }
 }

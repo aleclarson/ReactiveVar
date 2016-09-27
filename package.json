@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "Any": "aleclarson/Any#1.0.0",
-    "Property": "aleclarson/Property#1.1.1",
+    "Property": "aleclarson/Property#1.2.0",
     "Type": "aleclarson/Type#1.1.0",
     "postinstall-build": "0.2.x",
     "tracker": "aleclarson/tracker#2.0.0"

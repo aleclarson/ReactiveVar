@@ -7,24 +7,31 @@ type = Type "ReactiveVar"
 
 type.defineArgs
   value: Any
-  compare: Function.withDefault (oldValue, newValue) -> oldValue is newValue
+  keyPath: String
 
-type.defineValues (value, compare) ->
+type.defineValues (value, keyPath) ->
 
   _dep: Tracker.Dependency()
 
   _value: value
 
-  _compare: compare
+  _keyPath: keyPath
+
+type.defineGetters
+
+  keyPath: -> @_keyPath
 
 type.defineMethods
+
+  compare: (oldValue, newValue) ->
+    return oldValue is newValue
 
   get: ->
     @_dep.depend() if Tracker.isActive
     return @_value
 
   set: (newValue) ->
-    return if @_compare @_value, newValue
+    return if @compare @_value, newValue
     @_value = newValue
     @_dep.changed()
     return
@@ -33,7 +40,7 @@ type.defineMethods
     @set @_value + value
 
   sub: (value) ->
-    @_set @_value - value
+    @set @_value - value
 
   _numListeners: ->
     count = 0

@@ -5,9 +5,9 @@ Any = require "Any"
 
 type = Type "ReactiveVar"
 
-type.defineArgs
-  value: Any
-  keyPath: String
+type.defineArgs ->
+  required: no
+  types: [Any, String]
 
 type.defineValues (value, keyPath) ->
 

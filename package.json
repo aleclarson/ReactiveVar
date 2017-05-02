@@ -1,0 +1,11 @@
+{
+  "name": "ReactiveVar",
+  "version": "2.2.1",
+  "main": "js/index",
+  "dependencies": {
+    "Any": "aleclarson/Any#1.0.1",
+    "Property": "aleclarson/Property#1.2.4",
+    "Type": "aleclarson/Type#2.4.0",
+    "tracker": "aleclarson/tracker#2.2.1"
+  }
+}
